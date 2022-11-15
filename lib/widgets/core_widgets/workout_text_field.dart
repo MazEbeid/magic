@@ -27,7 +27,7 @@ class _WorkoutTextFieldState extends ConsumerState<WorkoutTextField> {
         height: 65,
         child: Center(
           child: TextField(
-            inputFormatters:widget.allowDecimal?[]:[FilteringTextInputFormatter.digitsOnly],
+
             onTap: (){
               FocusScope.of(context).requestFocus(widget.focusNode);
             },
@@ -37,7 +37,7 @@ class _WorkoutTextFieldState extends ConsumerState<WorkoutTextField> {
             maxLength: 5,
             textAlign: TextAlign.center,
             textInputAction: TextInputAction.next,
-            keyboardType: TextInputType.number,
+            keyboardType: TextInputType.numberWithOptions(decimal: widget.allowDecimal),
             decoration:  InputDecoration(
               hintText: widget.hint,
               hintStyle: workoutText,

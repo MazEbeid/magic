@@ -13,6 +13,7 @@ void main()async {
    Hive.registerAdapter(WorkoutSetAdapter());
    Hive.registerAdapter(SessionAdapter());
   runApp(const ProviderScope(child:  MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: MainScreen(),
   ),));
 }

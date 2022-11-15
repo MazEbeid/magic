@@ -69,8 +69,8 @@ class WorkoutCard extends HookConsumerWidget {
                         .addSet(workout);
                     if (setsList.length >= 4) {
                       itemScrollController.scrollTo(
-                          curve: Curves.easeInOutCubic,
-                          index: setsList.length,
+                          curve: Curves.ease,
+                          index: setsList.length-4,
                           duration: const Duration(milliseconds: 600));
                     }
                   },

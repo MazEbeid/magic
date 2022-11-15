@@ -7,12 +7,15 @@ class HeaderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: const [
-        GreetingWidget(),
-        ProfileButton()
-      ],
+    return Container(
+      margin: const EdgeInsets.only(top:20),
+      child:  Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: const [
+          GreetingWidget(),
+          ProfileButton()
+        ],
+      ),
     );
   }
 }

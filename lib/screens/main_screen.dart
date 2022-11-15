@@ -20,18 +20,19 @@ class MainScreen extends HookConsumerWidget {
         ref.watch(storedSessionsProvider);
     return SafeArea(
         child: Scaffold(
+          appBar: AppBar(
+            toolbarHeight: 80,
+            title:  const HeaderWidget(),
+            backgroundColor: primaryColor,
+            leadingWidth: 0,
+            leading: Container(),
+          ),
             backgroundColor: backgroundColor,
             body: Container(
               height: MediaQuery.of(context).size.height,
-              margin: EdgeInsets.only(
-                  top: MediaQuery.of(context).size.height * .05),
               padding: const EdgeInsets.all(16),
               child: Column(
                 children: [
-                  const HeaderWidget(),
-                  const SizedBox(
-                    height: 20,
-                  ),
                   workoutsListAsyncValue.when(
                       data: (storedSessions) {
                         if (storedSessions.isEmpty) {
@@ -46,6 +47,9 @@ class MainScreen extends HookConsumerWidget {
                         return Center(child: Text(trace.toString()));
                       },
                       loading: () => const LoadingWidget()),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   Align(
                     alignment: Alignment.center,
                     child: BorderedButton(
